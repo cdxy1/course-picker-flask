@@ -1,4 +1,4 @@
-@import url("fonts.css ");
+@import url("fonts.css");
 
 h1 {
     font-family: Comfortaa, sans-serif;
@@ -9,4 +9,18 @@ h1 {
     display: block;
     width: 64px;
     height: 64px;
-};
+}
+
+.page {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1 1 auto;
+}
