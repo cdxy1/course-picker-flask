@@ -1,15 +1,7 @@
-from enum import Enum
-
 from flask import Blueprint
 
 from app.extensions import db
 from app.models.user import User
-
-
-class UserRole(Enum):
-    STUDENT = "Student"
-    PROFESSOR = "Professor"
-
 
 user = Blueprint("user", __name__)
 
