@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 400;
+    scr: url("../fonts/Comfortaa/Comfortaa-Regular.ttf");
+};
+
+@font-face {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 600;
+    scr: url("../fonts/Comfortaa/Comfortaa-SemiBold.ttf");
+};
