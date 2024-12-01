@@ -24,3 +24,10 @@ h1 {
     padding: 40px 20px;
     flex: 1 1 auto;
 }
+
+.header {
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: white
+}
