@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+    Создание поста
+{% endblock %}
+
+{% block body %}
+  <h1> {{ self.title() }}</h1>
+    <form method="post" class="form-control d-flex flex-column gap-2">
+        <input name="Имя" type="text" placeholder="Иван" class="form-control">
+        <input name="Имя" type="text" placeholder="Иван" class="form-control">
+        <input name="Имя" type="text" placeholder="Иван" class="form-control">
+    </form>
+{% endblock %}
