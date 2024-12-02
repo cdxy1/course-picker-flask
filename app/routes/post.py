@@ -11,4 +11,3 @@ def create_post(subject, name):
     post = Post(subject=subject, name=name)
     db.session.add(post)
     db.session.commit()
-    return "Post has been added"
