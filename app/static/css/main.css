@@ -7,8 +7,9 @@ h1 {
 
 .header-image {
     display: block;
-    width: 64px;
-    height: 64px;
+    width: 96px;
+    height: 96px;
+    padding: 20px;
 }
 
 .page {
@@ -26,7 +27,6 @@ h1 {
 }
 
 .header {
-    padding: 20px;
     position: sticky;
     top: 0;
     background-color: white
