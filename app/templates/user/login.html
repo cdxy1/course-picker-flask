@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block body %}
+<h1> {{ self.title() }}</h1>
+<form method="post" class="form-control d-flex flex-column gap-2" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    {{ form.login }}
+    {{ form.password }}
+    {{ form.remember_me }}
+    {{ form.submit }}
+</form>
+{% endblock %}
