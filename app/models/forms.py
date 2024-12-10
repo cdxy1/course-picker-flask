@@ -46,7 +46,7 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     login = StringField("Логин", render_kw={'class': 'form-control', "placeholder": "Логин"})
-    password = StringField("Пароль", render_kw={'class': 'form-control', "placeholder": "Пароль"})
+    password = PasswordField("Пароль", render_kw={'class': 'form-control', "placeholder": "Пароль"})
     remember_me = BooleanField("Запомнить меня", render_kw={'class': 'btn btn-secondary'})
     submit = SubmitField("Войти", render_kw={'class': 'btn btn-success'})
 
