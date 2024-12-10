@@ -14,11 +14,6 @@
     </ul>
 
     <div class="col-md-3 text-end" style="padding: 20px">
-        <button type="button" class="btn btn-outline-primary me-2">
-            <a href="{{ url_for('user.login') }}" class="nav-link px-2">Войти</a>
-        </button>
-        <button type="button" class="btn btn-primary">
-            <a href="{{ url_for('user.register')}}" class="nav-link px-2">Регистрация</a>
-        </button>
+        {% include "main/_checker.html" %}
     </div>
 </header>
