@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, flash, request, url_for
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 
 from app.extensions import bcrypt, db, login
 from app.functions import save_image
@@ -43,10 +43,16 @@ def login():
             flash("Вы успешно авторизированны!", "success")
             login_user(user, form.remember_me.data)
             next_page = request.args.get("next")
-            return redirect(next_page) if next_page else redirect("/")
+            return redirect(next_page) if next_page else redirect(url_for("user.profile"))
         else:
             flash("Логин или пароль введен неправильно!", "danger")
     return render_template("user/login.html", form=form)
+
+
+@user.route("/user/profile")
+def profile():
+    user = current_user
+    return render_template("user/profile.html", user=user)
 
 
 @user.route("/user/logout")
