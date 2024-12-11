@@ -6,11 +6,24 @@
 
 {% block body %}
     <h1> {{ self.title() }}</h1>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+        {% endif %}
+    {% endwith %}
     <form action="" method="post" class="form-control d-flex flex-column gap-2" enctype="multipart/form-data">
         {{ form.csrf_token }}
         {{ form.login }}
         {{ form.password }}
-        {{ form.remember_me }}
+        <div>
+            {{ form.remember_me }}
+            {{ form.remember_me.label }}
+        </div>
         {{ form.submit }}
         {% include "user/_flash.html" %}
     </form>
