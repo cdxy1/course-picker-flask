@@ -19,9 +19,8 @@ def choose_theme():
     form.professor.choices = [professor.name for professor in User.query.filter_by(role=UserRole.PROFESSOR).all()]
     if UserRole.STUDENT == user.role:
         if form.validate_on_submit():
-            post = Post(subject=form.subject.data, professor=form.professor.data)
+            post = Post(subject=form.subject.data, professor=form.professor.data, user_id=current_user.get_id())
             try:
-                print(post)
                 db.session.add(post)
                 db.session.commit()
                 flash("Тема отправлена успешно отправлена", "success")

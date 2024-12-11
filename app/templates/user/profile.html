@@ -33,11 +33,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {% for post in posts %}
                                     <tr>
-                                        <td>Социальный анализ рынков на опросных и цифровых данных</td>
-                                        <td>Васильев Петр Иванович</td>
-                                        <td>Нет оценки</td>
+                                        <td>{{ post.subject }}</td>
+                                        <td>{{ post.professor }}</td>
+                                        <td> Оценки нет</td>
                                     </tr>
+                                    {% endfor %}
                                     </tbody>
                                 </table>
                             </div>

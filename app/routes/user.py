@@ -5,6 +5,7 @@ from app.extensions import bcrypt, db, login
 from app.functions import save_image
 from app.models.forms import RegistrationForm, LoginForm
 from app.models.user import User, UserRole
+from app.models.post import Post
 
 user = Blueprint("user", __name__)
 
@@ -53,7 +54,8 @@ def login():
 @login_required
 def profile():
     user = current_user
-    return render_template("user/profile.html", user=user)
+    post = Post.query.filter_by(user_id=user.id).all()
+    return render_template("user/profile.html", user=user, posts=post)
 
 
 @user.route("/user/logout")
