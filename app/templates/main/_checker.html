@@ -1,12 +1,15 @@
 {% if not current_user.is_authenticated %}
-<button type="button" class="btn btn-outline-primary me-2">
-    <a href="{{ url_for('user.login') }}" class="nav-link px-2">Войти</a>
-</button>
-<button type="button" class="btn btn-primary">
-    <a href="{{ url_for('user.register') }}" class="nav-link px-2">Регистрация</a>
-</button>
+    <button type="button" class="btn btn-outline-primary me-2">
+        <a href="{{ url_for('user.login') }}" class="nav-link px-2">Войти</a>
+    </button>
+    <button type="button" class="btn btn-primary">
+        <a href="{{ url_for('user.register') }}" class="nav-link px-2">Регистрация</a>
+    </button>
 {% else %}
     <button type="button" class="btn btn-outline-primary me-2">
-    <a href="{{ url_for('user.logout') }}" class="nav-link px-2">Выйти</a>
-</button>
+        <a href="{{ url_for('user.profile') }}" class="nav-link px-2">Профиль</a>
+    </button>
+    <button type="button" class="btn btn-danger">
+        <a href="{{ url_for('user.logout') }}" class="nav-link px-2">Выйти</a>
+    </button>
 {% endif %}
