@@ -5,6 +5,7 @@ from app.extensions import db, migrate, login
 from app.routes.main import main
 from app.routes.post import post
 from app.routes.user import user
+from app.routes.error import error
 
 
 def create_app():
@@ -13,6 +14,7 @@ def create_app():
     app.register_blueprint(user)
     app.register_blueprint(post)
     app.register_blueprint(main)
+    app.register_blueprint(error)
 
     db.init_app(app)
     migrate.init_app(app, db)
