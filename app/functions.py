@@ -14,3 +14,5 @@ def save_image(pic):
         return picture_file_name
     else:
         return None
+
+

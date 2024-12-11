@@ -50,3 +50,9 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField("Запомнить меня", render_kw={'class': 'btn btn-secondary'})
     submit = SubmitField("Войти", render_kw={'class': 'btn btn-success'})
 
+
+class ChooseThemeForm(FlaskForm):
+    professor = SelectField("Преподаватель", render_kw={'class': 'form-control', "autocomplete": "off"})
+    subject = StringField("Тема", render_kw={'class': 'form-control'})
+    submit = SubmitField("Отправить", render_kw={'class': 'btn btn-success'})
+
