@@ -11,10 +11,11 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="header"> {% include "main/header.html" %}</header>
+{% include "main/header.html" %}
 <div class="page">
     {% include "main/flash.html" %}
     <main class="content"> {% block body %} {% endblock %}</main>
+    {% block profile %} {% endblock %}
     <footer class="py-3 my-4 "> {% include "main/footer.html" %}</footer>
 </div>
 </body>
