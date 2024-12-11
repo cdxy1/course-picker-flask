@@ -50,6 +50,7 @@ def login():
 
 
 @user.route("/user/profile")
+@login_required
 def profile():
     user = current_user
     return render_template("user/profile.html", user=user)
