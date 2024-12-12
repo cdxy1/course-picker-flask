@@ -17,3 +17,5 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(250), nullable=False)
     avatar = db.Column(db.String(250), nullable=True)
     role = db.Column(db.Enum(UserRole), nullable=False)
+
+    post = db.relationship("Post", backref="student")

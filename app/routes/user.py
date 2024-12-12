@@ -54,8 +54,10 @@ def login():
 @login_required
 def profile():
     user = current_user
-    post = Post.query.filter_by(user_id=user.id).all()
-    return render_template("user/profile.html", user=user, posts=post)
+    student_post = Post.query.filter_by(student_id=user.id).all()
+    professor_post = Post.query.filter_by(professor_name=user.name).all()
+    print(student_post)
+    return render_template("user/profile.html", user=user, student_post=student_post, professor_post=professor_post, UserRole=UserRole)
 
 
 @user.route("/user/logout")
