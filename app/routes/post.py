@@ -19,7 +19,7 @@ def choose_theme():
     form.professor.choices = [professor.name for professor in User.query.filter_by(role=UserRole.PROFESSOR).all()]
     if UserRole.STUDENT == user.role:
         if form.validate_on_submit():
-            post = Post(subject=form.subject.data, professor=form.professor.data, user_id=current_user.get_id())
+            post = Post(subject=form.subject.data, professor_name=form.professor.data, student_id=current_user.get_id())
             try:
                 db.session.add(post)
                 db.session.commit()
