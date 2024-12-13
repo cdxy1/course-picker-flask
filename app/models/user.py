@@ -2,7 +2,7 @@ from enum import Enum
 
 from flask_login import UserMixin
 
-from ..extensions import db
+from app.extensions import db
 
 
 class UserRole(Enum):
