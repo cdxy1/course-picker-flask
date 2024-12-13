@@ -4,8 +4,8 @@ from flask_login import login_user, login_required, logout_user, current_user
 from app.extensions import bcrypt, db, login
 from app.functions import save_image
 from app.models.forms import RegistrationForm, LoginForm
-from app.models.user import User, UserRole
 from app.models.post import Post
+from app.models.user import User, UserRole
 
 user = Blueprint("user", __name__)
 
@@ -18,6 +18,7 @@ def load_user(user_id):
 @user.route("/user/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
+
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
         avatar = save_image(form.avatar.data)
@@ -38,6 +39,7 @@ def register():
 @user.route("/user/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
+
     if form.validate_on_submit():
         user = User.query.filter_by(login=form.login.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
@@ -56,8 +58,9 @@ def profile():
     user = current_user
     student_post = Post.query.filter_by(student_id=user.id).all()
     professor_post = Post.query.filter_by(professor_name=user.name).all()
-    print(student_post)
-    return render_template("user/profile.html", user=user, student_post=student_post, professor_post=professor_post, UserRole=UserRole)
+
+    return render_template("user/profile.html", user=user, student_post=student_post, professor_post=professor_post,
+                           UserRole=UserRole)
 
 
 @user.route("/user/logout")
