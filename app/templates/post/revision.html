@@ -1,0 +1,34 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+    Оценить работу
+{% endblock %}
+
+
+{% block body %}
+    <h2 class="text-center mb-4">Оценить</h2>
+    <div class="form-container">
+        <form action="#" method="POST">
+            <div class="mb-3">
+                <label for="course-title" class="form-label">Название курсовой работы:</label>
+                <select id="work-type" name="subject" class="form-select">
+                    {% for post in posts %}
+                        <option> {{ post.subject }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="work-type" class="form-label">Оценка:</label>
+                <select id="work-type" name="grade" class="form-select">
+                    <option value="Отлично">Отлично</option>
+                    <option value="Хорошо">Хорошо</option>
+                    <option value="Удовлетворительно">Удовлетворительно</option>
+                    <option value="Неудовлетворительно">Неудовлетворительно</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success submit-button">Отправить оценку</button>
+        </form>
+    </div>
+    </div>
+
+{% endblock %}
