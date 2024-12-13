@@ -3,7 +3,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from app.extensions import bcrypt, db, login
 from app.functions import save_image
-from app.models.forms import RegistrationForm, LoginForm
+from app.forms.user import RegistrationForm, LoginForm
 from app.models.post import Post
 from app.models.user import User, UserRole
 

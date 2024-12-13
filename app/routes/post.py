@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import current_user, login_required
 
 from app.extensions import db
-from app.models.forms import ChooseThemeForm
+from app.forms.post import ChooseThemeForm
 from app.models.post import Post
 from app.models.user import User, UserRole
 
