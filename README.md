@@ -61,7 +61,7 @@ course-picker-flask/
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/your-username/course-evaluation.git
+git clone https://github.com/cdxy1/course-picker-flask.git
 cd course-evaluation
 ```
 
